@@ -8,15 +8,20 @@ import codedraw.Palette;
 public class Aufgabe4 {
 
     public static void main(String[] args) {
-        AufgabeA();
+        AufgabeA(2);
+        AufgabeA(5);
+        AufgabeA(10);
+        AufgabeA(15);
+        AufgabeA(25);
+        AufgabeA(100);
     }
 
-    public static void AufgabeA(){
+    public static void AufgabeA(int num){
         int pixelWidth = 500;
         int pixelHeight = 500;
         CodeDraw myDrawObj = new CodeDraw(pixelWidth, pixelHeight);
 
-        int numLinesQuadrant = 5;
+        int numLinesQuadrant = num;
 
         for (int i = 1; i <= numLinesQuadrant; i++) {
             //CYAN quadrant (top left)
@@ -24,16 +29,16 @@ public class Aufgabe4 {
             myDrawObj.drawLine(i * (pixelWidth / 2.0 / numLinesQuadrant), 0, 0, pixelHeight / 2.0 - ((i - 1) * (pixelHeight / 2.0 / numLinesQuadrant)));
 
             //TODO: Implement MAGENTA quadrant (bottom left) herew2a!
-            myDrawObj.setColor(Palette.MAGENTA);
+            myDrawObj.setColor(Palette.GREEN);
             myDrawObj.drawLine((250 + (i-1) * (pixelWidth / 2.0 / numLinesQuadrant)), 0, 500,  ((i  * (pixelHeight / 2.0 / numLinesQuadrant))));
 
 
             //TODO: Implement the GREEN quadrant (top right) here
-            myDrawObj.setColor(Palette.GREEN);
+            myDrawObj.setColor(Palette.ORANGE);
             myDrawObj.drawLine(500, (250 + (i-1) * (pixelHeight / 2.0 / numLinesQuadrant)),pixelWidth  - ((i) * (pixelWidth / 2.0 / numLinesQuadrant)) , 500);
 
             //TODO: Implement the ORANGE quadrant (bottom right) here
-            myDrawObj.setColor(Palette.ORANGE);
+            myDrawObj.setColor(Palette.MAGENTA);
             myDrawObj.drawLine(pixelWidth/2 - ((i-1) * (pixelWidth / 2.0 / numLinesQuadrant)), 500,0 , pixelWidth  - ((i) * (pixelWidth / 2.0 / numLinesQuadrant)));
 
         }
